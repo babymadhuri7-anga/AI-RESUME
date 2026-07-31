@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+    <!-- Mammoth (DOCX Reader) -->
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1><i class="fa-solid fa-file-lines"></i> AI Resume Analyzer</h1>
+        <p>Upload your Resume and get an ATS Score with AI-based Suggestions.</p>
+    </div>
+
+    <div class="upload-box">
+
+        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+        <h2>Upload Resume</h2>
+
+        <p>Supported Files: PDF & DOCX</p>
+
+        <input type="file"
+               id="resumeInput"
+               accept=".pdf,.docx">
+
+        <button id="analyzeBtn">
+            Analyze Resume
+        </button>
+
+    </div>
+
+    <div class="result-box" id="resultBox">
+
+        <h2>Analysis Report</h2>
+
+        <div class="score-card">
+
+            <h3>ATS Score</h3>
+
+            <div class="circle">
+
+                <span id="score">0%</span>
+
+            </div>
+
+        </div>
+
+        <div class="skills">
+
+            <h3>Detected Skills</h3>
+
+            <div id="skillList">
+
+                No skills detected.
+
+            </div>
+
+        </div>
+
+        <div class="suggestions">
+
+            <h3>Suggestions</h3>
+
+            <ul id="suggestionList">
+
+                <li>Upload a resume to begin.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
